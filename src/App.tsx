@@ -23,7 +23,7 @@ type SavedState = {
 const storageVersion = 2
 const storageKey = "world-cup-2026-predictor-state"
 const shareUrl = "https://wc2026.egoist.dev"
-const twemojiSvgBase = "/twemoji/svg"
+const twemojiSvgBase = `${import.meta.env.BASE_URL}twemoji/svg`
 const teamMap = new Map(groups.flatMap((group) => group.teams.map((team) => [team.id, team])))
 const groupKeys = new Set(groups.map((group) => group.key))
 const stages: { id: Stage }[] = [{ id: "knockout" }, { id: "share" }]
@@ -498,7 +498,7 @@ function ShareGraphic({
           <div className="poster-champion-label">CHAMPIONS</div>
         </div>
         <div className="poster-trophy">
-          <img className="poster-trophy-image" src="/world-cup-trophy.png" alt="" />
+          <img className="poster-trophy-image" src={`${import.meta.env.BASE_URL}world-cup-trophy.png`} alt="" />
         </div>
       </section>
     </div>
