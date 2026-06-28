@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig(function (_a) {
     var mode = _a.mode;
     return ({
+        base: '/WorldCupPredict/', // ✅ 新增这一行
         plugins: [
             react(),
             tailwindcss(),
